@@ -169,7 +169,7 @@ def main():
         idxname = '%s/disp0HSM'%(idxname)
 
         # resize to highres
-        pred_disp = cv2.resize(pred_disp/args.testres,(imgsize[1],imgsize[0]),interpolation=cv2.INTER_LINEAR)
+        pred_disp = cv2.resize(pred_disp/args.testres,(imgsize[1],imgsize[0]),interpolation=cv2.INTER_NEAREST)
 
         # clip while keep inf
         invalid = np.logical_or(pred_disp == np.inf,pred_disp!=pred_disp)
